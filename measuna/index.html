@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mea Suna Madeira - Loading</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+<!-- Page Loader -->
+  <div class="container d-flex justify-content-center align-items-center">   
+    <div id="pageLoader" class="loader-overlay">
+        <!-- Top navbar/logo -->
+        <div class="loader-navbar">
+            <div class="loader-logo">Mea Suna</div>
+        </div>
+
+        <!-- Loader content container -->
+        <div class="loader-inner">
+        <!-- Grey Background Text -->
+        <div class="loader-background-text">
+            <div class="background-text-item">Mea Suna</div>
+        </div>
+
+            <!-- Four Corner Images (small, inside container) -->
+            <div class="corner-image top-left" data-image="1"></div>
+            <div class="corner-image top-right" data-image="2"></div>
+            <div class="corner-image bottom-left" data-image="3"></div>
+            <div class="corner-image bottom-right" data-image="4"></div>
+
+            <!-- Progress Line (Bottom to Top inside container) -->
+            <div class="progress-line"></div>
+
+            <!-- Percentage Counter (centered in container) -->
+            <div class="percentage-counter">
+                <span id="percentage">0%</span>
+            </div>
+        </div>
+    </div>
+  </div>
+
+
+    <!-- Main Website Content (Hidden during loading) -->
+    <div id="mainContent" class="main-content hidden">
+
+        <!-- Side Menu -->
+        <div class="side-menu" id="sideMenu">
+            <div class="side-menu-header">
+                <button class="side-menu-close" id="sideMenuClose">
+                    <span></span>
+                    <span></span>
+                </button>
+                <button class="side-menu-inquire-btn">INQUIRE NOW</button>
+            </div>
+            
+            <div class="side-menu-content">
+                <div class="menu-section">
+                    <h3 class="menu-section-title">SERVICE</h3>
+                    <ul class="menu-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#bedrooms">Bedrooms</a></li>
+                        <li><a href="#living">Living Space</a></li>
+                        <li><a href="#amenities">Amenities</a></li>
+                    </ul>
+                </div>
+                
+                <div class="menu-divider"></div>
+                
+                <div class="menu-section">
+                    <h3 class="menu-section-title">OTHERS</h3>
+                    <ul class="menu-links">
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#imprint">Imprint</a></li>
+                        <li><a href="#data-policy">Data Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="side-menu-footer">
+                <p>&copy; 2025</p>
+            </div>
+        </div>
+
+        <!-- Navigation Bar -->
+    <nav class="main-navbar">
+        <div class="navbar-left">
+            <div class="navbar-toggle" id="navbarToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="navbar-center">
+            <div class="navbar-logo">
+                <div class="logo-text">MEA SUNA MADEIRA</div>
+            </div>
+        </div>
+        <div class="navbar-right">
+            <button class="inquiry-btn">INQUIRE NOW</button>
+        </div>
+    </nav>
+        
+        <header class="hero-section">
+            <div class="hero-overlay"></div>
+            <div class="hero-video">
+                <video autoplay muted loop>
+                    <source src="https://r2.vidzflow.com/v/1MRqONfXPP_1080p_1737463347.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="hero-content">
+                <h1>Madeiras hidden paradise</h1>
+                <p>Immerse yourself in the serene oasis of Mea Suna Madeira, where comfort and style coexist in perfect harmony.</p>
+                <div class="hero-divider"></div>
+                <div class="scroll-indicator">
+                    <div class="mouse-icon">
+                        <div class="mouse-wheel"></div>
+                    </div>
+                    <span class="scroll-text">SCROLL DOWN</span>
+                </div>
+            </div>
+        </header>
+        
+        <main>
+
+            <section class="intro-section">
+                <h2>Far From Ordinary,<br>Close To Perfect!</h2>
+                <p>Mea Suna Madeira stands for extravagance of its own. Nestled along Madeira's green coastline, this place of calm and relaxation offers extraordinary amenities. From a world-class golf simulator to unparalleled wellness and inspiring workspaces, everything you desire is here.</p>
+                
+                <div class="intro-video">
+                    <video autoplay muted loop playsinline id="introVideo">
+                        <source src="https://r2.vidzflow.com/v/g9vXOBLi0X_720p_1737461793.mp4" type="video/mp4">
+                    </video>
+                    
+                    <!-- Custom Video Controls -->
+                    <div class="video-controls">
+                        <!-- Top-right volume mute indicator -->
+                        <div class="volume-indicator" id="volumeIndicator">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke="white" stroke-width="2" fill="none"/>
+                                <path d="M19.07 4.93L4.93 19.07" stroke="white" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        
+                        <!-- Video Progress Bar -->
+                        <div class="video-progress-container">
+                            <div class="video-progress-bar">
+                                <div class="video-progress-fill" id="progressFill"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Bottom-right fullscreen button only -->
+                        <div class="control-buttons">
+                            <button class="control-btn fullscreen-btn" id="fullscreenBtn">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                    <path d="M8 3H5C3.89543 3 3 3.89543 3 5V8" stroke="white" stroke-width="2"/>
+                                    <path d="M21 8V5C21 3.89543 20.1046 3 19 3H16" stroke="white" stroke-width="2"/>
+                                    <path d="M16 21H19C20.1046 21 21 20.1046 21 19V16" stroke="white" stroke-width="2"/>
+                                    <path d="M3 16V19C3 20.1046 3.89543 21 5 21H8" stroke="white" stroke-width="2"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            
+            <section class="features-section">
+                <div class="features-background"></div>
+                <div class="features-container">
+                    <div class="feature-card" data-bg="privacy">
+                        <div class="feature-content">
+                            <h3>PRIVACY &<br>SPACE</h3>
+                            <p class="feature-description">Discover unmatched privacy and comfort in every corner of our home. Experience the luxury of having your own secluded paradise.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-divider"></div>
+                    
+                    <div class="feature-card" data-bg="panoramic">
+                        <div class="feature-content">
+                            <h3>PANORAMIC<br>PARADISE</h3>
+                            <p class="feature-description">Step into a breathtaking outdoor haven where lush green mountains meet the crystal-clear ocean. Every view is a masterpiece.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-divider"></div>
+                    
+                    <div class="feature-card" data-bg="amenities">
+                        <div class="feature-content">
+                            <h3>EXQUISITE<br>AMENITIES</h3>
+                            <p class="feature-description">Indulge in a world of premier leisure with our high-end fitness suite, soothing spa, private cinema and world-class golf simulator. Elevate your stay with endless recreation options crafted to enrich every moment of your getaway.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+   <section class="horizontal-section">
+    <div class="horizontal-wrapper">
+      <div class="slide">
+        <div class="tour-slide explore-slide">
+            <div class="slide-left">    
+                <div class="slide-header-text">PRIVACY & SPACE</div>
+                <div class="slide-header-line"></div>
+                <div class="slide-title">EXPLORE OUR<br>HOME</div>
+                <div class="slide-description">
+                    From the moment you step into the expansive living area, you'll be immersed in the awe-inspiring sea views that define every room. The beautifully appointed sitting areas, elegant dining spaces, and inviting bedrooms create a refined and welcoming ambiance.
+                </div>
+                <button class="slide-cta-btn">INQUIRE NOW</button>
+            </div>
+            <div class="slide-right">
+                <div class="image-collage">
+                    <div class="image-item image-item-1">
+                        <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&h=1200&fit=crop" alt="Home">
+                    </div>
+                    <div class="image-item image-item-2">
+                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=800&fit=crop" alt="Relaxation">
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="tour-slide explore-slide">
+            <div class="slide-left">    
+                <div class="slide-title">Living Space</div>
+                <div class="slide-description">
+                    Immerse yourself in the finest comfort of our spacious living area. Relax by the fireplace, unwind on the plush sofa or stay productive in the serene study room.
+                </div>
+                <div class="slide-header-line"></div>
+            </div>
+            <div class="slide-right">
+                <div class="image-collage">
+                    <div class="image-item image-item-3">
+                        <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&h=1200&fit=crop" alt="Home">
+                    </div>
+                    <div class="image-item image-item-4">
+                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=800&fit=crop" alt="Relaxation">
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="tour-slide explore-slide">
+            <div class="slide-left">    
+                <div class="image-item image-item-5">
+                    <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&h=1200&fit=crop" alt="Home">
+                </div>
+            </div>
+            <div class="slide-right">
+                <div class="image-collage">
+                    <div class="image-item image-item-6">
+                        <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&h=1200&fit=crop" alt="Home">
+                    </div>
+                    <div class="image-item image-item-4">
+                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=800&fit=crop" alt="Relaxation">
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="tour-slide explore-slide">
+            <div class="slide-left">    
+                <div class="slide-title">Dining Area</div>
+                <div class="slide-description">
+                    Enjoy culinary delights in the elegant dining area with its generous indoor table and poolside terrace seating. Prepare meals in the large kitchen or use the separate barbecue area for a perfect outdoor dining experience.
+                </div>
+                <div class="slide-header-line"></div>
+            </div>
+            <div class="slide-right">
+                <div class="image-collage">
+                    <div class="image-item image-item-3">
+                        <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&h=1200&fit=crop" alt="Home">
+                    </div>
+                    <div class="image-item image-item-8">
+                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=800&fit=crop" alt="Relaxation">
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="tour-slide explore-slide">
+            <div class="slide-left">    
+                <div class="image-item image-item-5">
+                    <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&h=1200&fit=crop" alt="Home">
+                </div>
+            </div>
+            <div class="slide-right">
+                <div class="image-collage">
+                    <div class="image-item image-item-6">
+                        <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&h=1200&fit=crop" alt="Home">
+                    </div>
+                    <div class="image-item image-item-4">
+                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=800&fit=crop" alt="Relaxation">
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="tour-slide explore-slide">
+            <div class="slide-left">    
+                <div class="slide-title">Bedrooms</div>
+                <div class="slide-description">
+                    Wake up to breathtaking ocean views in one of our three stylish bedrooms. Enjoy the rising and setting sun from your balcony, and embrace the calming sounds of the ocean waves.                </div>
+                <div class="slide-header-line"></div>
+            </div>
+            <div class="slide-right">
+                <div class="image-collage">
+                    <div class="image-item image-item-3">
+                        <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&h=1200&fit=crop" alt="Home">
+                    </div>
+                    <div class="image-item image-item-8">
+                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=800&fit=crop" alt="Relaxation">
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="tour-slide explore-slide">
+            <div class="slide-left">    
+                <div class="image-item image-item-5">
+                    <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&h=1200&fit=crop" alt="Home">
+                </div>
+            </div>
+            <div class="slide-right">
+                <div class="image-collage">
+                    <div class="image-item image-item-6">
+                        <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&h=1200&fit=crop" alt="Home">
+                    </div>
+                    <div class="image-item image-item-4">
+                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=800&fit=crop" alt="Relaxation">
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-bottom-divider"></div>
+    <div class="slide-overlay-cta">
+        <div class="cta-rings">
+            <span class="ring ring-outer"></span>
+            <span class="ring ring-middle"></span>
+            <span class="ring ring-inner">
+                <span class="cta-arrow">→</span>
+            </span>
+        </div>
+    </div>
+  </section>
+
+  <!-- Vertical Gallery Section -->
+  <section class="gallery-section">
+      <div class="gallery-inner">
+          <div class="gallery-header">
+              <h2 class="gallery-title">YOUR PANORAMIC OASIS AWAITS</h2>
+              <p class="gallery-subtitle">Relax amidst lush coastal gardens and a panoramic infinity pool, surrounded by stunning natural beauty.</p>
+              <button class="gallery-cta">EXPLORE GALLERY</button>
+          </div>
+          <div class="row">
+              <div class="col-lg-4 col-md-4 col-sm12">
+                  <div class="gallery-card" data-card-index="0" data-images='["https://cdn.prod.website-files.com/66571619d0ab300c2bfd7b71/6772274725aa75f901a5a393_66a2305964e8b9ea39f14b4f_13card-mea-suna.webp","https://cdn.prod.website-files.com/66571619d0ab300c2bfd7b71/6772274725aa75f901a5a393_66a2305964e8b9ea39f14b4f_13card-mea-suna.webp","https://cdn.prod.website-files.com/66571619d0ab300c2bfd7b71/6772274725aa75f901a5a393_66a2305964e8b9ea39f14b4f_13card-mea-suna.webp"]'>
+                      <div class="card-image-container">
+                          <img src="https://cdn.prod.website-files.com/66571619d0ab300c2bfd7b71/6772274725aa75f901a5a393_66a2305964e8b9ea39f14b4f_13card-mea-suna.webp" alt="Garden" class="card-img">
+                      </div>
+                      <div class="card-overlay">
+                          <div class="card-dots">
+                              <span class="dot active" data-dot-index="0"></span>
+                              <span class="dot" data-dot-index="1"></span>
+                              <span class="dot" data-dot-index="2"></span>
+                          </div>
+                          <p class="card-text">Explore four lush terraces filled with evergreens and vibrant blooms. Hammocks and loungers invite you to relax with sweeping ocean views.</p>
+                          <div class="card-title">GARDEN</div>                 
+                        </div>
+                  </div>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm12">
+                  <div class="gallery-card center-card" data-card-index="1" data-images='["https://cdn.prod.website-files.com/66571619d0ab300c2bfd7b71/677229aa296a1a6e8db21813_66a2305a87f2e0eeede61a6d_2card-mea-suna.webp","https://cdn.prod.website-files.com/66571619d0ab300c2bfd7b71/677229aa296a1a6e8db21813_66a2305a87f2e0eeede61a6d_2card-mea-suna.webp","https://cdn.prod.website-files.com/66571619d0ab300c2bfd7b71/677229aa296a1a6e8db21813_66a2305a87f2e0eeede61a6d_2card-mea-suna.webp"]'>
+                      <div class="card-image-container">
+                          <img src="https://cdn.prod.website-files.com/66571619d0ab300c2bfd7b71/677229aa296a1a6e8db21813_66a2305a87f2e0eeede61a6d_2card-mea-suna.webp" alt="Pool" class="card-img">
+                      </div>
+                      <div class="card-overlay">
+                          <div class="card-dots">
+                              <span class="dot active" data-dot-index="0"></span>
+                              <span class="dot" data-dot-index="1"></span>
+                              <span class="dot" data-dot-index="2"></span>
+                          </div>
+                          <p class="card-text">Heated infinity pool with massage jets and counter-current. Lounge by the water or on the sundeck with panoramic views.</p>
+                          <div class="card-title">POOL</div>
+                        </div>
+                  </div>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-12">
+                  <div class="gallery-card" data-card-index="2" data-images='["https://cdn.prod.website-files.com/66571619d0ab300c2bfd7b71/66acee55343422b88c8f8e2b_5measuna.webp","https://cdn.prod.website-files.com/66571619d0ab300c2bfd7b71/66acee55343422b88c8f8e2b_5measuna.webp","https://cdn.prod.website-files.com/66571619d0ab300c2bfd7b71/66acee55343422b88c8f8e2b_5measuna.webp"]'>
+                      <div class="card-image-container">
+                          <img src="https://cdn.prod.website-files.com/66571619d0ab300c2bfd7b71/66acee55343422b88c8f8e2b_5measuna.webp" alt="Scenery" class="card-img">
+                      </div>
+                      <div class="card-overlay">
+                          <div class="card-dots">
+                              <span class="dot active" data-dot-index="0"></span>
+                              <span class="dot" data-dot-index="1"></span>
+                              <span class="dot" data-dot-index="2"></span>
+                          </div>
+                          <p class="card-text">Terraced architecture set high above the coastline offers breathtaking views of the cliffs and crystal-clear Atlantic.</p>
+                          <div class="card-title">SCENERY</div>
+                        </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+            
+        </main>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
